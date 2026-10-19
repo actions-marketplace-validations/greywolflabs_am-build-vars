@@ -16,7 +16,7 @@ jobs:
     name: action.yml metadata
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
 
       - name: action.yml parses as third-party action metadata
         run: |
@@ -218,14 +218,14 @@ jobs:
     name: Resolver unit tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
       - run: bash tests/local-test.sh
 
   action:
     name: End-to-end
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
 
       # --- 1. config file present -----------------------------------------
       - name: Config file present
@@ -476,7 +476,7 @@ jobs:
       # Publishing merges into the existing store, so even a pure producer reads.
       actions: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
 
       # The value a real pipeline has: computed during the run, not committed.
       - name: Compute a tag the way a build would
@@ -515,7 +515,7 @@ jobs:
       contents: read
       actions: read
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
 
       - name: Read the store the other job wrote
         id: consume
@@ -655,7 +655,7 @@ jobs:
       || contains(github.event.pull_request.labels.*.name, 'ci:macos')
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7.0.1
 
       # macOS runner images ship python3 but NOT PyYAML, so the action's documented
       # macOS prerequisite has to be satisfied here exactly as a user would satisfy it.
